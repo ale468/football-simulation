@@ -1,0 +1,14 @@
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.user
+*.suo
+__pycache__/
+*.pyc
+.venv/
+build/
+out/
+cmake-build-*/
+CMakeUserPresets.json
