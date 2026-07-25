@@ -1,0 +1,30 @@
+name: Feature
+description: Propose a scoped and verifiable public capability
+title: "[FEATURE] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and user outcome
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope and non-scope
+    validations:
+      required: true
+  - type: textarea
+    id: authority
+    attributes:
+      label: Authoritative-state and realism impact
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria, tests and evidence
+    validations:
+      required: true
+

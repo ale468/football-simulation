@@ -1,0 +1,30 @@
+name: Experiment
+description: Test a removable hypothesis with a baseline and fallback
+title: "[EXPERIMENT] "
+labels: ["experiment"]
+body:
+  - type: textarea
+    id: hypothesis
+    attributes:
+      label: Hypothesis and causal mechanism
+    validations:
+      required: true
+  - type: textarea
+    id: baseline
+    attributes:
+      label: Baseline, scenario and controls
+    validations:
+      required: true
+  - type: textarea
+    id: metrics
+    attributes:
+      label: Metrics, limits and expected evidence
+    validations:
+      required: true
+  - type: textarea
+    id: fallback
+    attributes:
+      label: Isolation, fallback and removal plan
+    validations:
+      required: true
+

@@ -1,0 +1,30 @@
+name: Performance
+description: Propose a measured optimization without weakening correctness
+title: "[PERFORMANCE] "
+labels: ["performance"]
+body:
+  - type: textarea
+    id: profile
+    attributes:
+      label: Profile evidence and observed bottleneck
+    validations:
+      required: true
+  - type: textarea
+    id: baseline
+    attributes:
+      label: Reproducible baseline and hardware
+    validations:
+      required: true
+  - type: textarea
+    id: invariants
+    attributes:
+      label: Correctness, determinism and realism invariants
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Metrics, acceptance threshold and rollback
+    validations:
+      required: true
+
