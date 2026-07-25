@@ -1,10 +1,11 @@
 # Publication manifest 0001 — Public contribution and CI bootstrap
 
 - Public issue: [#1](https://github.com/ale468/football-simulation/issues/1)
-- Public pull request: assigned after branch publication
+- Public pull request: [#2](https://github.com/ale468/football-simulation/pull/2)
 - Base commit: `8fd60daf84263164bad4c1fe53f19b516691ef2e`
 - Source category: newly authored public governance and validation material
 - Runtime impact: none
+- Initial branch commit: `df08e86`
 
 ## Allowlist
 
@@ -28,4 +29,3 @@
 ## Independence
 
 All files in this batch are understandable and usable from this public repository alone. No private prompt, issue text, credential or confidential evidence is required.
-
