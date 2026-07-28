@@ -3,6 +3,11 @@ description: Propose a measured optimization without weakening correctness
 title: "[PERFORMANCE] "
 labels: ["performance"]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Shared GitHub runner timing is not an absolute reference-hardware budget.
+        Do not claim an improvement without a reproducible baseline and distribution.
   - type: textarea
     id: profile
     attributes:
@@ -12,19 +17,30 @@ body:
   - type: textarea
     id: baseline
     attributes:
-      label: Reproducible baseline and hardware
+      label: Reproducible baseline, hardware and raw results
+    validations:
+      required: true
+  - type: textarea
+    id: mechanism
+    attributes:
+      label: Proposed causal mechanism
     validations:
       required: true
   - type: textarea
     id: invariants
     attributes:
-      label: Correctness, determinism and realism invariants
+      label: Authoritative, determinism and realism invariants
+    validations:
+      required: true
+  - type: textarea
+    id: metrics
+    attributes:
+      label: CPU, memory, allocation and latency metrics
     validations:
       required: true
   - type: textarea
     id: acceptance
     attributes:
-      label: Metrics, acceptance threshold and rollback
+      label: Evidence-derived threshold, limitations and rollback
     validations:
       required: true
-

@@ -1,12 +1,28 @@
 name: Feature
 description: Propose a scoped and verifiable public capability
 title: "[FEATURE] "
-labels: ["enhancement"]
+labels: ["type:feature"]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Read the project overview and active roadmap first. A proposal is not
+        ready for implementation until its scope, gates and evidence are accepted.
+  - type: dropdown
+    id: phase
+    attributes:
+      label: Phase
+      options:
+        - Phase 1 - Deterministic Contact Lab
+        - Future phase - planning only
+        - Cross-cutting governance
+    validations:
+      required: true
   - type: textarea
     id: problem
     attributes:
-      label: Problem and user outcome
+      label: Problem and human outcome
+      description: Explain the outcome without requiring source-code knowledge.
     validations:
       required: true
   - type: textarea
@@ -19,6 +35,21 @@ body:
     id: authority
     attributes:
       label: Authoritative-state and realism impact
+      description: State what may change and which authoritative invariants cannot.
+    validations:
+      required: true
+  - type: textarea
+    id: performance
+    attributes:
+      label: Performance impact
+      description: State expected CPU, memory, allocation and latency impact, or why none applies.
+    validations:
+      required: true
+  - type: textarea
+    id: gates
+    attributes:
+      label: Gate profile
+      description: Select from DOCS, KERNEL, DETERMINISM, ABI, COLLISION_REALISM, PERFORMANCE, ML_FUTURE and PUBLICATION.
     validations:
       required: true
   - type: textarea
@@ -27,4 +58,9 @@ body:
       label: Acceptance criteria, tests and evidence
     validations:
       required: true
-
+  - type: textarea
+    id: risks
+    attributes:
+      label: Dependencies, risks and rollback
+    validations:
+      required: true

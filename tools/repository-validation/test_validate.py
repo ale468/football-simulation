@@ -27,6 +27,10 @@ class RepositoryValidatorTests(unittest.TestCase):
         (root / "DCO").write_text(
             "Developer's Certificate of Origin 1.1\n", encoding="utf-8"
         )
+        for relative, fragments in VALIDATOR.REQUIRED_FRAGMENTS.items():
+            path = root / relative
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text("\n".join(fragments) + "\n", encoding="utf-8")
 
     def test_valid_tree_passes(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -56,7 +60,39 @@ class RepositoryValidatorTests(unittest.TestCase):
                 )
             )
 
+    def test_missing_contract_fragment_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_valid_tree(root)
+            readme = root / "README.md"
+            readme.write_text("public project\n", encoding="utf-8")
+            self.assertTrue(
+                any(
+                    "required contract fragment" in error
+                    for error in VALIDATOR.validate(root)
+                )
+            )
+
+    def test_broken_relative_markdown_link_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self.make_valid_tree(root)
+            for relative, fragments in VALIDATOR.REQUIRED_FRAGMENTS.items():
+                path = root / relative
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text("\n".join(fragments) + "\n", encoding="utf-8")
+            (root / "README.md").write_text(
+                (root / "README.md").read_text(encoding="utf-8")
+                + "[missing](docs/missing.md)\n",
+                encoding="utf-8",
+            )
+            self.assertTrue(
+                any(
+                    "broken relative link" in error
+                    for error in VALIDATOR.validate(root)
+                )
+            )
+
 
 if __name__ == "__main__":
     unittest.main()
-
