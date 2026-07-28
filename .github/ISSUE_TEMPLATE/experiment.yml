@@ -4,6 +4,13 @@ title: "[EXPERIMENT] "
 labels: ["experiment"]
 body:
   - type: textarea
+    id: phase
+    attributes:
+      label: Active-phase authorization and isolation
+      description: Explain why this experiment is allowed now and how it remains outside the productive critical path.
+    validations:
+      required: true
+  - type: textarea
     id: hypothesis
     attributes:
       label: Hypothesis and causal mechanism
@@ -16,6 +23,12 @@ body:
     validations:
       required: true
   - type: textarea
+    id: gates
+    attributes:
+      label: Gate profile and protected invariants
+    validations:
+      required: true
+  - type: textarea
     id: metrics
     attributes:
       label: Metrics, limits and expected evidence
@@ -24,7 +37,6 @@ body:
   - type: textarea
     id: fallback
     attributes:
-      label: Isolation, fallback and removal plan
+      label: Removal, fallback and promotion decision
     validations:
       required: true
-

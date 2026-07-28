@@ -1,6 +1,11 @@
 blank_issues_enabled: false
 contact_links:
+  - name: Public roadmap and ready work
+    url: https://github.com/users/ale468/projects/2
+    about: Review the active phase and choose a ready, bounded work item.
+  - name: Developer journey
+    url: https://github.com/ale468/football-simulation/blob/main/docs/DEVELOPER-JOURNEY.md
+    about: Understand branches, pull requests, gates, evidence and promotion.
   - name: Security vulnerability
     url: https://github.com/ale468/football-simulation/security/advisories/new
     about: Report exploitable vulnerabilities privately.
-
