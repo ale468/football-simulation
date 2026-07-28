@@ -1,11 +1,11 @@
 # Publication manifest 0002 — Public developer journey
 
 - Public issue: [#4](https://github.com/ale468/football-simulation/issues/4)
-- Public pull request: to be recorded after branch publication
+- Public pull request: [#6](https://github.com/ale468/football-simulation/pull/6)
 - Base commit: `3635a029c77082454df6f37d56f4f3b58f8b530a`
 - Source category: newly authored public documentation, templates, agent instructions and validation
 - Runtime impact: none
-- Initial branch commit: to be recorded after the first signed-off commit
+- Initial branch commit: `50384d0d8015d87f5b6657b5ed8d73c25be566e8`
 
 ## Purpose
 
